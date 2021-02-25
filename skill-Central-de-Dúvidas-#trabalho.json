@@ -1,0 +1,348 @@
+{
+  "intents": [
+    {
+      "intent": "CombateAoPlagio",
+      "examples": [
+        {
+          "text": "ajuda plagio"
+        },
+        {
+          "text": "combater plagio"
+        },
+        {
+          "text": "como identificar plagio"
+        },
+        {
+          "text": "cópia de trabalho"
+        },
+        {
+          "text": "ferramentas plagio"
+        },
+        {
+          "text": "identificar plagio"
+        },
+        {
+          "text": "plágio"
+        },
+        {
+          "text": "sobre o plagio"
+        },
+        {
+          "text": "trabalho com plagio"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "FichaCatalográfica",
+      "examples": [
+        {
+          "text": "ajuda ficha"
+        },
+        {
+          "text": "auxílio ficha catalográfica"
+        },
+        {
+          "text": "Catalográfica"
+        },
+        {
+          "text": "como fazer ficha catalográfica"
+        },
+        {
+          "text": "dicas ficha catalográfica"
+        },
+        {
+          "text": "Ficha"
+        },
+        {
+          "text": "sistema de elaboração de fichas"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "GuiaParaElaboraçãoDeTrabalhosAcademicosDaFEI",
+      "examples": [
+        {
+          "text": "ajuda para o tcc"
+        },
+        {
+          "text": "ajuda para o trabalho academico"
+        },
+        {
+          "text": "como começar um trabalho academico"
+        },
+        {
+          "text": "como fazer trabalho academico"
+        },
+        {
+          "text": "como fazer um tcc"
+        },
+        {
+          "text": "como iniciar tcc"
+        },
+        {
+          "text": "elaboração de trabalhos academicos"
+        },
+        {
+          "text": "guia elaboração"
+        },
+        {
+          "text": "manual ABNT"
+        },
+        {
+          "text": "manual trabalhos academicos"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "OrientaçãoNormalizaçãoDeTrabalhosAcadêmicos",
+      "examples": [
+        {
+          "text": "como seguir as normas ABNT"
+        },
+        {
+          "text": "dicas normas ABNT"
+        },
+        {
+          "text": "normalização de trabalho"
+        },
+        {
+          "text": "orientação trabalho"
+        },
+        {
+          "text": "padronizar trabalho"
+        },
+        {
+          "text": "TCC ABNT"
+        },
+        {
+          "text": "trabalho formal padrão"
+        },
+        {
+          "text": "trabalho padronizado"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ProcedimentoParaEntregaDeTrabalhosAcademicos",
+      "examples": [
+        {
+          "text": "como entregar trabalho academico"
+        },
+        {
+          "text": "entrega"
+        },
+        {
+          "text": "onde entregar trabalho academico"
+        },
+        {
+          "text": "procedimento"
+        },
+        {
+          "text": "procedimentos"
+        },
+        {
+          "text": "quando entregar trabalho academico"
+        },
+        {
+          "text": "trabalho acadêmico entrega"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bem-vindo à sessão de Trabalhos Acadêmicos da biblioteca FEI! Sobre o que quer se informar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_8_1614286789670",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_2_1614284470392",
+      "event_name": "input",
+      "dialog_node": "handler_6_1614284470401"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1614284470392",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1614284470401",
+      "previous_sibling": "handler_6_1614284470401"
+    },
+    {
+      "type": "standard",
+      "title": "ProcedimentoParaEntrega",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "\nOs trabalhos acadêmicos devem ser entregues de acordo com os procedimentos da secretaria do curso. Cabe ao orientador, juntamente com a secretaria, definir quais trabalhos serão entregues, assim como, efetuar a entrega na biblioteca.\n\nAlguns procedimentos são obrigatórios para que essa entrega seja realizada:\na) o trabalho acadêmico deve ser normalizado de acordo com as orientações do Guia para Elaboração de Trabalhos Acadêmicos da FEI;\nb) uma cópia impressa em capa dura na cor preta e letras douradas (Monografias e TCCs) ou na cor azul-marinho e letras douradas (Teses e Dissertações);\n- uma mídia (CD ou DVD) contendo somente o PDF/A para as monografias e TCCs;\n- uma cópia da versão final da dissertação ou tese no formato PDF/A encaminhada para o e-mail:\nbib.dissertacoes_teses@fei.edu.br;\n- termo de autorização para a publicação eletrônica preenchido e assinado por todos os autores do trabalho;\nc) a entrega na biblioteca deverá ser feita pelo orientador ou pela secretaria do curso. A biblioteca não aceita trabalhos entregues diretamente pelos alunos.\nTermos de autorização: disponíveis para download (arquivo word) em: https://portal.fei.edu.br/biblioteca#trabalho\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ProcedimentoParaEntregaDeTrabalhosAcademicos",
+      "dialog_node": "node_3_1614285140531",
+      "previous_sibling": "node_4_1614280383793"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Orientação para normalização de trabalhos acadêmicos",
+            "source": "https://static.fei.edu.br/Arquivos/img/biblioteca/trabalhos-academicos.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#OrientaçãoNormalizaçãoDeTrabalhosAcadêmicos",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1614286303767",
+      "previous_sibling": "node_4_1614285541255"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ficha Catalográfica:\nA biblioteca da FEI disponibiliza para seus usuários o sistema para elaboração de fichas catalográficas que foi desenvolvido pelo ICMC/USP e gentilmente cedido para ser adaptado às necessidades de sua comunidade acadêmica.\n\nA partir de outubro de 2015 a ficha catalográfica passa a ser elaborada pelo próprio usuário e deve ser impressa no verso da página/folha de rosto.\n\nÉ um elemento obrigatório em trabalhos acadêmicos e sua elaboração é feita com as informações fundamentais para a identificação do documento, entre elas: autor e orientador, título, total de folhas, assunto, palavras-chave, etc.\n\nDúvidas e sugestões podem ser enviadas através do email: bib_digital@fei.edu.br\nPágina para elaborar sua ficha: http://sofia.fei.edu.br/ficha/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#FichaCatalográfica",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1614280383793",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A biblioteca do Centro Universitário FEI, por recomendação da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES), divulga ao seu público um texto informativo, com intuito de coibir o plágio nas produções acadêmicas desenvolvidas na IES.\n\nPara auxiliá-los segue opções gratuitas de detecção de plágio:\n\nFarejador de Plágio\nSite: http://www.plagiarismcombat.com/\n\nPlagium\nSite: http://www.plagium.com/\n\nPlagiarisma\nSite: http://plagiarisma.net/\n\nSaiba mais sobre o plágio: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/imagens/biblioteca/novembro/plagio.pdf"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#CombateAoPlagio",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1614285541255",
+      "previous_sibling": "node_3_1614285140531"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Guia para elaboração de trabalhos acadêmicos da FEI:\nO guia substitui o Manual para apresentação formal de trabalhos acadêmicos. Elaborado de acordo com as normas vigentes da Associação Brasileira de Normas Técnicas (ABNT), traz um novo formato, além de novos exemplos com uma linguagem simples para facilitar a compreensão dos usuários.\n\nInformamos que o guia está disponível somente na versão eletrônica.\n\nO seu enfoque não é só a padronização disponibilizada através das normas estabelecidas, mas principalmente a qualidade dos trabalhos apresentados na instituição.\n\nCitação: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/vestibular/22020/citacao_rev-2020.pdf\nEstrutura: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/imagens/biblioteca/ta/estrutura_2020.pdf\nReferências: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/imagens/biblioteca/ta/referencias_2020.pdf\n\nA biblioteca disponibiliza os tutoriais de configuração do Word e uma template do trabalho pronto, mais um recurso para ajudá-lo na estruturação do TCC.\n\nTemplates disponíveis para download em: https://portal.fei.edu.br/biblioteca#trabalho\nPaginação: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/biblioteca/paginacao.pdf\nSumário: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/biblioteca/sumario.pdf\nLista de Ilustrações:\nhttps://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/biblioteca/ilustracoes.pdf\nLista de Tabelas:\nhttps://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/biblioteca/tabelas.pdf\nConversor: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/biblioteca/conversorpdf.pdf"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#GuiaParaElaboraçãoDeTrabalhosAcademicosDaFEI",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1614286789670",
+      "previous_sibling": "node_3_1614286303767"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1614280383793",
+      "dialog_node": "slot_2_1614284470392"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Central de Dúvidas #trabalho",
+  "language": "pt-br",
+  "description": ""
+}

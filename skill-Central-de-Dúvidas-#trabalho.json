@@ -1,6 +1,39 @@
 {
   "intents": [
     {
+      "intent": "Bitly",
+      "examples": [
+        {
+          "text": "Bitly"
+        },
+        {
+          "text": "encurtador de url"
+        },
+        {
+          "text": "gerenciador de url"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ClasseLatexDaFEI",
+      "examples": [
+        {
+          "text": "classe latex"
+        },
+        {
+          "text": "classe latex da fei"
+        },
+        {
+          "text": "latex"
+        },
+        {
+          "text": "latex da fei"
+        }
+      ],
+      "description": ""
+    },
+    {
       "intent": "CombateAoPlagio",
       "examples": [
         {
@@ -61,6 +94,24 @@
       "description": ""
     },
     {
+      "intent": "GuiaDaNovaReformaOrtografica",
+      "examples": [
+        {
+          "text": "Guia da nova reforma ortográfica"
+        },
+        {
+          "text": "guia ortografico"
+        },
+        {
+          "text": "nova ortografia"
+        },
+        {
+          "text": "reforma ortografica"
+        }
+      ],
+      "description": ""
+    },
+    {
       "intent": "GuiaParaElaboraçãoDeTrabalhosAcademicosDaFEI",
       "examples": [
         {
@@ -92,6 +143,36 @@
         },
         {
           "text": "manual trabalhos academicos"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "MecanismoOnlineParaReferencias",
+      "examples": [
+        {
+          "text": "mecanismo de referencias"
+        },
+        {
+          "text": "Mecanismo Online para Referências"
+        },
+        {
+          "text": "MORE"
+        },
+        {
+          "text": "referencias"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Mendeley",
+      "examples": [
+        {
+          "text": "Mendeley"
+        },
+        {
+          "text": "rede social academica"
         }
       ],
       "description": ""
@@ -154,7 +235,33 @@
       "description": ""
     }
   ],
-  "entities": [],
+  "entities": [
+    {
+      "entity": "sys-currency",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
   "metadata": {
     "api_version": {
       "major_version": "v2",
@@ -205,7 +312,7 @@
       },
       "conditions": "anything_else",
       "dialog_node": "Em outros casos",
-      "previous_sibling": "node_8_1614286789670",
+      "previous_sibling": "node_1_1614534409653",
       "disambiguation_opt_out": true
     },
     {
@@ -221,6 +328,26 @@
       "event_name": "focus",
       "dialog_node": "handler_8_1614284470401",
       "previous_sibling": "handler_6_1614284470401"
+    },
+    {
+      "type": "standard",
+      "title": "Mendeley",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O Mendeley é considerado uma rede social acadêmica que conecta pesquisadores e permite gerenciar referências, buscar, arquivar e compartilhar documentos.\nLink de acesso ao Mendeley: https://www.mendeley.com/reference-management/reference-manager"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Mendeley",
+      "dialog_node": "node_1_1614534409653",
+      "previous_sibling": "node_7_1614534333171"
     },
     {
       "type": "standard",
@@ -244,6 +371,7 @@
     },
     {
       "type": "standard",
+      "title": "Orientação Normalização de Trabalhos Acadêmicos",
       "output": {
         "generic": [
           {
@@ -260,6 +388,27 @@
     },
     {
       "type": "standard",
+      "title": "Guia da nova reforma ortográfica",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Saiba o que mudou na ortografia brasileira: https://gerenciador.fei.edu.br/Content/Arquivos/Template/junho2017/Themes/Resources/docs/biblioteca/guia_reforma_ortografica_cp.pdf"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#GuiaDaNovaReformaOrtografica",
+      "dialog_node": "node_3_1614534464040",
+      "previous_sibling": "node_9_1614534433877"
+    },
+    {
+      "type": "standard",
+      "title": "Ficha Catalográfica",
       "output": {
         "generic": [
           {
@@ -276,10 +425,11 @@
       "conditions": "#FichaCatalográfica",
       "digress_in": "does_not_return",
       "dialog_node": "node_4_1614280383793",
-      "previous_sibling": "Bem-vindo"
+      "previous_sibling": "node_3_1614534464040"
     },
     {
       "type": "standard",
+      "title": "Combate ao plagio",
       "output": {
         "generic": [
           {
@@ -300,6 +450,47 @@
     },
     {
       "type": "standard",
+      "title": "Classe Latex da FEI",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A classe LaTeX da FEI é um arquivo de formatação de trabalhos acadêmicos para usuários de LaTeX, de acordo com as normas de formatação do Centro Universitário FEI. Ela está disponível nas principais distribuições de LaTeX (MikTeX no Windows, MacTeX no MacOS e TeX Live no Linux), possui um manual de utilização em PDF e um template para ajudar usuários a iniciar seus trabalhos acadêmicos.\n\nA classe também possui um site e um grupo no Google com dicas para usuários. O projeto de código aberto é mantido no GitHub, tendo como desenvolvedor principal Douglas De Rizzo Meneghetti."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ClasseLatexDaFEI",
+      "dialog_node": "node_6_1614534276414",
+      "previous_sibling": "node_8_1614286789670"
+    },
+    {
+      "type": "standard",
+      "title": "Mecanismo Online para Referencias",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "MORE é uma ferramenta gratuita e fácil de usar, que produz automaticamente citações no texto e referências no formato ABNT.\nLink de acesso ao MORE: http://www.more.ufsc.br/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#MecanismoOnlineParaReferencias",
+      "dialog_node": "node_7_1614534333171",
+      "previous_sibling": "node_6_1614534276414"
+    },
+    {
+      "type": "standard",
+      "title": "Guia para elaboração de Trabalhos Academicos da FEI",
       "output": {
         "generic": [
           {
@@ -317,6 +508,26 @@
       "digress_in": "does_not_return",
       "dialog_node": "node_8_1614286789670",
       "previous_sibling": "node_3_1614286303767"
+    },
+    {
+      "type": "standard",
+      "title": "Bitly",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "bitly é um dos mais famosos gerenciadores e encurtadores de URL da internet. Confira: https://bitly.com/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Bitly",
+      "dialog_node": "node_9_1614534433877",
+      "previous_sibling": "Bem-vindo"
     },
     {
       "type": "slot",

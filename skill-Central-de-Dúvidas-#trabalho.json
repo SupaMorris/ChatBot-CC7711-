@@ -351,13 +351,13 @@
     },
     {
       "type": "standard",
-      "title": "ProcedimentoParaEntrega",
+      "title": "Procedimento Para Entrega",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "\nOs trabalhos acadêmicos devem ser entregues de acordo com os procedimentos da secretaria do curso. Cabe ao orientador, juntamente com a secretaria, definir quais trabalhos serão entregues, assim como, efetuar a entrega na biblioteca.\n\nAlguns procedimentos são obrigatórios para que essa entrega seja realizada:\na) o trabalho acadêmico deve ser normalizado de acordo com as orientações do Guia para Elaboração de Trabalhos Acadêmicos da FEI;\nb) uma cópia impressa em capa dura na cor preta e letras douradas (Monografias e TCCs) ou na cor azul-marinho e letras douradas (Teses e Dissertações);\n- uma mídia (CD ou DVD) contendo somente o PDF/A para as monografias e TCCs;\n- uma cópia da versão final da dissertação ou tese no formato PDF/A encaminhada para o e-mail:\nbib.dissertacoes_teses@fei.edu.br;\n- termo de autorização para a publicação eletrônica preenchido e assinado por todos os autores do trabalho;\nc) a entrega na biblioteca deverá ser feita pelo orientador ou pela secretaria do curso. A biblioteca não aceita trabalhos entregues diretamente pelos alunos.\nTermos de autorização: disponíveis para download (arquivo word) em: https://portal.fei.edu.br/biblioteca#trabalho\n"
+                "text": "\nOs trabalhos acadêmicos devem ser entregues de acordo com os procedimentos da secretaria do curso. Cabe ao orientador, juntamente com a secretaria, definir quais trabalhos serão entregues, assim como, efetuar a entrega na biblioteca.\n\nAlguns procedimentos são obrigatórios para que essa entrega seja realizada:\na) o trabalho acadêmico deve ser normalizado de acordo com as orientações do Guia para Elaboração de Trabalhos Acadêmicos da FEI;\nb) uma cópia impressa em capa dura na cor preta e letras douradas (Monografias e TCCs) ou na cor azul-marinho e letras douradas (Teses e Dissertações);\n- uma mídia (CD ou DVD) contendo somente o PDF/A para as monografias e TCCs;\n- uma cópia da versão final da dissertação ou tese no formato PDF/A.\n- termo de autorização para a publicação eletrônica preenchido e assinado por todos os autores do trabalho;\nc) a entrega na biblioteca deverá ser feita pelo orientador ou pela secretaria do curso. A biblioteca não aceita trabalhos entregues diretamente pelos alunos.\nTermos de autorização: disponíveis para download (arquivo word) em: https://portal.fei.edu.br/biblioteca#trabalho\n"
               }
             ],
             "response_type": "text",
